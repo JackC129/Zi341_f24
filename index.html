@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>
-            Zi
+            Zi's Page
         </title>
         <style>
             body{
@@ -15,12 +15,25 @@
             }
             img{
                 margin-top: 20px;
+                margin-bottom: 20px;
                 height: 400px;
+            }
+            .breathe{
+                font-size: 50px;
+                margin: 10px;
+                animation: breathe 3s infinite alternate;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            @keyframes breathe {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.1); } 
+                100% { transform: scale(1); }
             }
         </style>
     </head>
     <body>
-        <h2>
+        <h2 class="breathe">
             Hello!
         </h2>
         <p>
@@ -29,6 +42,7 @@
             I have experienced all three coding language (HTML, CSS, JS), but need to learn more of JavaScript.<br>
         </p>
         <a href="https://github.com/JackC129">Github</a><br>
-        <img src="bike.webp">
+        <img src="biked.jpg"><br>
+        <a href="week1.html">Week 1</a>
     </body>
 </html>
