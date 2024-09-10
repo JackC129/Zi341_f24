@@ -10,7 +10,7 @@
                 box-sizing: border-box;
                 margin: 0;
                 padding: 0;
-                background-color: #b9dec9;
+                background-color: #322f3b;
             }
             li, a, button {
                 font-family: "sono", monospace;
@@ -58,11 +58,10 @@
             .dropdown {
                 display: none;
                 position: absolute;
-                background-color: #98b8a6;
                 min-width: 160px;
                 z-index: 1;
                 padding: 10px 0;
-                border: solid #98b8a6 1px;
+                border: solid #8eab9b 1px;
                 border-radius: 5px;
             }
             .dropdown li {
@@ -82,18 +81,15 @@
                 margin-top: 100px;
                 margin-left: 50px;
                 padding: 20px 0;
-                overflow: hidden; 
-                white-space: nowrap; 
-                border-right: .15em solid orange; 
-                animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+                animation: glow 2s ease-in-out infinite alternate;
             }
-            @keyframes typing {
-                from { width: 0; }
-                to { width: 100%; }
-            }
-            @keyframes blink-caret {
-                from, to { border-color: transparent; }
-                50% { border-color: #606368; }
+            @keyframes glow {
+                from {
+                text-shadow: 0 0 30px #8c4bc2;
+                }
+                to {
+                text-shadow: 0 0 40px #882dac, 0 0 20px #4dc7b3;
+                }
             }
         </style>
     </head>
