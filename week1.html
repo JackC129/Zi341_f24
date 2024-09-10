@@ -6,15 +6,81 @@
         </title>
         <style>
             body{
-                background-color: beige;
+                background-color: #c7d2d4;
                 font-family: monospace;
                 text-align: center;
+            }
+            li, a, button {
+                font-family: "sono", monospace;
+                font-size: 16px;
+                color: white;
+                text-decoration: none;
+            }
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 30px 10%;
+            }
+            .logo {
+                height: 80px;
+                width: auto;
+                cursor: pointer;
+            }
+            .nav_link {
+                list-style: none;
+                position: relative;
+            }
+            .nav_link li {
+                display: inline-block;
+                padding: 0px 20px;
+                position: relative;
+            }
+            .nav_link li a {
+                transition: all 0.3s ease 0s;
+            }
+            .nav_link li a:hover {
+                color: #879cad;
+            }
+            button {
+                background-color: rgba(135, 156, 173, 1);
+                padding: 10px 25px;
+                border: none;
+                border-radius: 50px;
+                cursor: pointer;
+                transition: all 0.3s ease 0s;
+            }
+            button:hover {
+                background-color: rgba(135, 156, 173, 0.6);
+            }
+            .dropdown {
+                display: none;
+                position: absolute;
+                background-color: #c7d2d4;
+                min-width: 160px;
+                z-index: 1;
+                padding: 10px 0;
+                border: solid #8eab9b 1px;
+                border-radius: 5px;
+            }
+            .dropdown li {
+                display: block;
+                padding: 10px 20px;
+            }
+            .dropdown li a:hover {
+                color: #879cad;
+            }
+            .nav_link li:hover .dropdown {
+                display: block;
             }
             img{
                 height: 300px;
             }
-            .container{
+            .week1{
                 text-align: center;
+            }
+            .week1 h1{
+                font-size: 25px;
             }
             .res{
                 text-align: center;
@@ -24,21 +90,27 @@
                 width: 50%;
                 margin: 20px auto;
             }
-            .home{
-                text-decoration: none;
-                padding: 20px;
-                margin-top: 20px;
-                color:#96b5f7;
-                text-align: center;
-                display: inline-block;
-            }
-            .home:hover{
-                background-color: #eff3cc;
-            }
         </style>
     </head>
     <body>
-        <div class="container">
+        <header>
+            <img class="logo" src="logo1.png" alt="logo">
+            <nav>
+                <ul class="nav_link">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="https://github.com/JackC129">Github</a></li>
+                    <li>
+                        <a href="#">Weekly Work</a>
+                        <ul class="dropdown">
+                            <li><a href="week1.html">Week 1</a></li>
+                            <li><a href="week2.html">Week 2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <a class="about" href="aboutme.html"><button>About Me</button></a>
+        </header>
+        <section class="week1">
             <h1>
                 Week 1 Response
             </h1>
@@ -56,8 +128,7 @@
                 the Mondrain artwork uses the similar concept of using basic color and parallagram to create 
                 a geometric artwork.
             </p>
-            <img src="mondrian.jpg">
-        </div>
-        <a href="index.html" class="home">Homepage</a>
+            <img src="image/mondrian.jpg">
+        </section>
     </body>
 </html>

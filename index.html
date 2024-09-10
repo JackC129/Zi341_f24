@@ -1,48 +1,123 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
-            Zi's Page
-        </title>
+        <title>Zi's Page</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sono&display=swap" rel="stylesheet">
         <style>
-            body{
-                text-align: center;
-                font-family: monospace;
-                background-color: beige;
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                background-color: #b9dec9;
             }
-            p{
-                margin: 20px;
+            li, a, button {
+                font-family: "sono", monospace;
+                font-size: 16px;
+                color: white;
+                text-decoration: none;
             }
-            img{
-                margin-top: 20px;
-                margin-bottom: 20px;
-                height: 400px;
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 30px 10%;
             }
-            .breathe{
-                font-size: 50px;
-                margin: 10px;
-                animation: breathe 3s infinite alternate;
+            .logo {
+                height: 80px;
+                width: auto;
+                cursor: pointer;
+            }
+            .nav_link {
+                list-style: none;
+                position: relative;
+            }
+            .nav_link li {
                 display: inline-block;
-                vertical-align: middle;
+                padding: 0px 20px;
+                position: relative;
             }
-            @keyframes breathe {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.1); } 
-                100% { transform: scale(1); }
+            .nav_link li a {
+                transition: all 0.3s ease 0s;
+            }
+            .nav_link li a:hover {
+                color: #879cad;
+            }
+            button {
+                background-color: rgba(135, 156, 173, 1);
+                padding: 10px 25px;
+                border: none;
+                border-radius: 50px;
+                cursor: pointer;
+                transition: all 0.3s ease 0s;
+            }
+            button:hover {
+                background-color: rgba(135, 156, 173, 0.6);
+            }
+            .dropdown {
+                display: none;
+                position: absolute;
+                background-color: #98b8a6;
+                min-width: 160px;
+                z-index: 1;
+                padding: 10px 0;
+                border: solid #98b8a6 1px;
+                border-radius: 5px;
+            }
+            .dropdown li {
+                display: block;
+                padding: 10px 20px;
+            }
+            .dropdown li a:hover {
+                color: #879cad;
+            }
+            .nav_link li:hover .dropdown {
+                display: block;
+            }
+            h1 {
+                font-size: 100px;
+                font-family: "sono", monospace;
+                color: white;
+                margin-top: 100px;
+                margin-left: 50px;
+                padding: 20px 0;
+                overflow: hidden; 
+                white-space: nowrap; 
+                border-right: .15em solid orange; 
+                animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+            }
+            @keyframes typing {
+                from { width: 0; }
+                to { width: 100%; }
+            }
+            @keyframes blink-caret {
+                from, to { border-color: transparent; }
+                50% { border-color: #606368; }
             }
         </style>
     </head>
     <body>
-        <h2 class="breathe">
-            Hello!
-        </h2>
-        <p>
-            My name is Zi. I am a senior majoring in Emerging Media <br>
-            I like to bike and play badminton in my free time.<br>
-            I have experienced all three coding language (HTML, CSS, JS), but need to learn more of JavaScript.<br>
-        </p>
-        <a href="https://github.com/JackC129">Github</a><br>
-        <img src="biked.jpg"><br>
-        <a href="week1.html">Week 1</a>
+        <header>
+            <img class="logo" src="logo1.png" alt="logo">
+            <nav>
+                <ul class="nav_link">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="https://github.com/JackC129">Github</a></li>
+                    <li>
+                        <a href="#">Weekly Work</a>
+                        <ul class="dropdown">
+                            <li><a href="week1.html">Week 1</a></li>
+                            <li><a href="week2.html">Week 2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <a class="about" href="aboutme.html"><button>About Me</button></a>
+        </header>
+        <h1>
+            Hello! <br>
+            Welcome to my page
+        </h1>
     </body>
 </html>

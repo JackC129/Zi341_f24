@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Week 1</title>
+        <style>
+            body {
+                background-color: #1c0d1a;
+                font-family: monospace;
+                text-align: center;
+            }
+            li, a, button {
+                font-family: "sono", monospace;
+                font-size: 16px;
+                color: white;
+                text-decoration: none;
+            }
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 30px 10%;
+            }
+            .logo {
+                height: 80px;
+                width: auto;
+                cursor: pointer;
+            }
+            .nav_link {
+                list-style: none;
+                position: relative;
+            }
+            .nav_link li {
+                display: inline-block;
+                padding: 0px 20px;
+                position: relative;
+            }
+            .nav_link li a {
+                transition: all 0.3s ease 0s;
+            }
+            .nav_link li a:hover {
+                color: #879cad;
+            }
+            button {
+                background-color: rgba(135, 156, 173, 1);
+                padding: 10px 25px;
+                border: none;
+                border-radius: 50px;
+                cursor: pointer;
+                transition: all 0.3s ease 0s;
+            }
+            button:hover {
+                background-color: rgba(135, 156, 173, 0.6);
+            }
+            .dropdown {
+                display: none;
+                position: absolute;
+                background-color: #1c0d1a;
+                min-width: 160px;
+                z-index: 1;
+                padding: 10px 0;
+                border: solid #8eab9b 1px;
+                border-radius: 5px;
+            }
+            .dropdown li {
+                display: block;
+                padding: 10px 20px;
+            }
+            .dropdown li a:hover {
+                color: #879cad;
+            }
+            .nav_link li:hover .dropdown {
+                display: block;
+            }
+            .week2 {
+                color: white;
+            }
+            .week2 h1 {
+                font-size: 25px;
+            }
+            .flex-container {
+                display: flex; 
+                justify-content: center; 
+                align-items: flex-start; 
+                gap: 20px; 
+                padding: 20px;
+                border: solid #806d9e 5px;
+                border-radius: 5px;
+                margin: 10px;
+                background-color: #322f3b;
+            }
+            .flex-container iframe {
+                flex: 1; 
+                max-width: 700px; 
+                height: 500px; 
+            }
+            .text-container {
+                flex: 1; 
+                max-width: 500px; 
+                display: flex;
+                flex-direction: column; 
+                text-align: left; 
+                gap: 10px; 
+            }
+            .text-container h1 {
+                margin: 0; 
+                font-size: 20px;
+                animation: glow 2s ease-in-out infinite alternate;
+            }
+            @keyframes glow {
+                from {
+                text-shadow: 0 0 30px #712da9;
+                }
+                to {
+                text-shadow: 0 0 40px #9934c1, 0 0 20px #a24dc7;
+                }
+            }
+            .text-container p {
+                margin: 0; 
+                line-height: 2;
+                font-size: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <img class="logo" src="logo1.png" alt="logo">
+            <nav>
+                <ul class="nav_link">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="https://github.com/JackC129">Github</a></li>
+                    <li>
+                        <a href="#">Weekly Work</a>
+                        <ul class="dropdown">
+                            <li><a href="week1.html">Week 1</a></li>
+                            <li><a href="week2.html">Week 2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <a class="about" href="aboutme.html"><button>About Me</button></a>
+        </header>
+        <section class="week2">
+            <h1>Week 2 Response</h1>
+            <div class="flex-container">
+                <iframe src="https://moderncss.dev/" width="700px" height="500px"></iframe>
+                <div class="text-container">
+                    <h1>Modern CSS Solution</h1>
+                    <p>
+                        I found this interesting website of "Modern CSS Solution" that gives guides for any CSS problems that people will get into.
+                        Looking over the website I see many animations. To break it down, this website is combined with header, main section, and footer.
+                        The main section of the website is made up of multiple list and using CSS to make it in a parallagram with animation after mouse
+                        hover over it. The list is a link to a new page that gives the details of the problems. Looking at the source code of the website,
+                        it uses const to declare a random index generator code and uses "document.querySelector" which selects the first DOM element that matches the CSS 
+                        selector constructed from the random index.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
