@@ -85,6 +85,7 @@
                 flex-wrap: wrap;
                 justify-content: space-between;
                 margin: auto;
+                margin-top: 60px;
             }
             .content .card{
                 flex-basis: calc(50% - 40px);
@@ -93,6 +94,11 @@
                 background-color: #a7a8bd;
                 display: flex;
                 flex-direction: column;
+                transition: all 0.3s ease;
+            }
+            .content .card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 15px rgba(0,0,0,0.3);
             }
             .content .card .img-container {
                 width: 100%;
@@ -112,8 +118,9 @@
                 margin-top: 10px;
                 margin-left: 10px;
                 font-size: 18px;
-                background-color: #a7a8bd;
+                background-color: inherit;
                 animation: glow 2s ease-in-out infinite alternate;
+                transition: all 0.3s ease;
             }
             @keyframes glow {
                 from {
@@ -129,7 +136,8 @@
                 line-height: 1.5;
                 padding: 10px;
                 flex-grow: 1;
-                background-color: #a7a8bd;
+                background-color: inherit;
+                transition: all 0.3s ease;
             }
             @media screen and (max-width: 800px){
                 .content .card{
@@ -162,7 +170,7 @@
                             <img src="image/mondrian.jpg" alt="Mondrian artwork">
                         </div>
                         <h4>
-                            #1: Interesting Website
+                            #1: Interesting Website -- 9/4/24
                         </h4>
                         <p>
                             This website Fruitful Presentation created by Min Guhong is very interesting. 
@@ -184,19 +192,50 @@
                             <img src="image/moderncss.png" alt="Modern CSS Solutions">
                         </div>
                         <h4>
-                            #2: Static Website
+                            #2: Static Website -- 9/11/24
                         </h4>
                         <p>
                             I found this interesting website of "Modern CSS Solution" that gives guides for any CSS problems that people will get into.
-                        Looking over the website I see many animations. To break it down, this website is combined with header, main section, and footer.
-                        The main section of the website is made up of multiple list and using CSS to make it in a parallagram with animation after mouse
-                        hover over it. The list is a link to a new page that gives the details of the problems. Looking at the source code of the website,
-                        it uses const to declare a random index generator code and uses "document.querySelector" which selects the first DOM element that matches the CSS 
-                        selector constructed from the random index. It dynamically change CSS properties of elements based on user interactions or specific conditions.
+                            Looking over the website I see many animations. To break it down, this website is combined with header, main section, and footer.
+                            The main section of the website is made up of multiple list and using CSS to make it in a parallagram with animation after mouse
+                            hover over it. The list is a link to a new page that gives the details of the problems. Looking at the source code of the website,
+                            it uses const to declare a random index generator code and uses "document.querySelector" which selects the first DOM element that matches the CSS 
+                            selector constructed from the random index. It dynamically change CSS properties of elements based on user interactions or specific conditions.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script>
+            const cards = document.querySelectorAll('.card');
+            
+            function generatePastelColor() {
+                const r = Math.floor((Math.random() * 55) + 200).toString(16);
+                const g = Math.floor((Math.random() * 55) + 200).toString(16);
+                const b = Math.floor((Math.random() * 55) + 200).toString(16);
+                return `#${r}${g}${b}`;
+            }
+
+            cards.forEach(card => {
+                const heading = card.querySelector('h4');
+                const paragraph = card.querySelector('p');
+
+                card.addEventListener('mouseenter', () => {
+                    const pastelColor = generatePastelColor();
+                    card.style.backgroundColor = pastelColor;
+                    heading.style.backgroundColor = pastelColor;
+                    paragraph.style.backgroundColor = pastelColor;
+                    card.style.transform = 'scale(1.05)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.backgroundColor = '#a7a8bd';
+                    heading.style.backgroundColor = '#a7a8bd';
+                    paragraph.style.backgroundColor = '#a7a8bd';
+                    card.style.transform = 'scale(1)';
+                });
+            });
+        </script>
     </body>
 </html>
