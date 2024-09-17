@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weekly Post</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sono&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                background-color: #74759b;
+                font-family: "Nanum Gothic Coding", monospace;
+            }
+            li, a, button {
+                font-family: "sono", monospace;
+                font-size: 16px;
+                color: white;
+                text-decoration: none;
+            }
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 30px 10%;
+            }
+            .logo {
+                height: 80px;
+                width: auto;
+                cursor: pointer;
+            }
+            .nav_link {
+                list-style: none;
+                position: relative;
+            }
+            .nav_link li {
+                display: inline-block;
+                padding: 0px 20px;
+                position: relative;
+            }
+            .nav_link li a {
+                transition: all 0.3s ease 0s;
+            }
+            .nav_link li a:hover {
+                color: #879cad;
+            }
+            button {
+                background-color: rgba(135, 156, 173, 1);
+                padding: 10px 25px;
+                border: none;
+                border-radius: 50px;
+                cursor: pointer;
+                transition: all 0.3s ease 0s;
+            }
+            button:hover {
+                background-color: rgba(135, 156, 173, 0.6);
+            }
+            .container{
+                width: 100%;
+            }
+            .container .row{
+                width: 80%;
+                margin: auto;
+            }
+            .container .row .header{
+                width: 60%;
+                text-align: center;
+                margin: auto;
+            }
+            .container .row .header h1{
+                padding-top: 30px;
+                font-size: 40px;
+                color:#d7dcb2;
+            }
+            .container .row .header p{
+                margin-top: 15px;
+                font-size: 18px;
+                line-height: 1.5;
+                color: #dcddf7;
+            }
+            .content{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin: auto;
+            }
+            .content .card{
+                flex-basis: calc(50% - 40px);
+                margin: 20px;
+                box-shadow: 5px 0px 10px 0px rgba(0,0,0,0.5);
+                background-color: #a7a8bd;
+                display: flex;
+                flex-direction: column;
+            }
+            .content .card .img-container {
+                width: 100%;
+                padding-top: 66.67%; 
+                position: relative;
+                overflow: hidden;
+            }
+            .content .card .img-container img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .content .card h4{
+                margin-top: 10px;
+                margin-left: 10px;
+                font-size: 18px;
+                background-color: #a7a8bd;
+                animation: glow 2s ease-in-out infinite alternate;
+            }
+            @keyframes glow {
+                from {
+                text-shadow: 0 0 30px #712da9;
+                }
+                to {
+                text-shadow: 0 0 40px #9934c1, 0 0 20px #a24dc7;
+                }
+            }
+            .content .card p{
+                font-size: 15px;
+                color: #494a61;
+                line-height: 1.5;
+                padding: 10px;
+                flex-grow: 1;
+                background-color: #a7a8bd;
+            }
+            @media screen and (max-width: 800px){
+                .content .card{
+                    flex-basis: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <img class="logo" src="logo1.png" alt="logo">
+            <nav>
+                <ul class="nav_link">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="https://github.com/JackC129" target="_blank">Github</a></li>
+                    <li><a href="weekblog.html">Weekly Work</a></li>
+                </ul>
+            </nav>
+            <a class="about" href="aboutme.html"><button>About Me</button></a>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="header">
+                    <h1>Weekly Post</h1>
+                    <p>Welcome to my weekly response post</p>
+                </div>
+                <div class="content">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="image/mondrian.jpg" alt="Mondrian artwork">
+                        </div>
+                        <h4>
+                            #1: Interesting Website
+                        </h4>
+                        <p>
+                            This website Fruitful Presentation created by Min Guhong is very interesting. 
+                            The author create the website as if it's a slide show. In each of the slides or 
+                            webpage there's a message that's left for the audience, sometimes there's even 
+                            links and scrolling in a line required. I really wonder if each webpage is separated 
+                            or is it together but just uses a button to proceed to the next page. 
+                            I agree with the author of how each tag and language of coding. Especially about
+                            HTML and CSS is the base of web production, the author use the example of pyramid
+                            to compare if without HTML and CSS the pyramid will not be able to build up. 
+                            This website remind me of the Mondrain artwork. They both uses basic color to create the artwork. 
+                            The website use basic color of yellow and green to present a slideshow like website, and
+                            the Mondrain artwork uses the similar concept of using basic color and parallagram to create 
+                            a geometric artwork.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="image/moderncss.png" alt="Modern CSS Solutions">
+                        </div>
+                        <h4>
+                            #2: Static Website
+                        </h4>
+                        <p>
+                            I found this interesting website of "Modern CSS Solution" that gives guides for any CSS problems that people will get into.
+                        Looking over the website I see many animations. To break it down, this website is combined with header, main section, and footer.
+                        The main section of the website is made up of multiple list and using CSS to make it in a parallagram with animation after mouse
+                        hover over it. The list is a link to a new page that gives the details of the problems. Looking at the source code of the website,
+                        it uses const to declare a random index generator code and uses "document.querySelector" which selects the first DOM element that matches the CSS 
+                        selector constructed from the random index. It dynamically change CSS properties of elements based on user interactions or specific conditions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
