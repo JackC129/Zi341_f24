@@ -53,6 +53,7 @@
             const todoItems = document.querySelectorAll('.todo-item');
             
             todoItems.forEach((item, index) => {
+                //from https://taper.badquar.to/12/to-do.html
                 const width = item.getBoundingClientRect().width;
                 const duration = (Math.random() * 3 + 2) * 10000; 
                 const delay = -Math.random() * 20000; 
