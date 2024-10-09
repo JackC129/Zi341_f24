@@ -59,7 +59,7 @@
                 const direction = index % 2 === 0 ? "alternate" : "alternate-reverse";
 
                 //from https://taper.badquar.to/12/to-do.html 
-                item.animate([
+                const animation = item.animate([
                     { transform: `translateX(${-width}px)` },
                     { transform: `translateX(${window.innerWidth}px)` }
                 ], {
@@ -68,6 +68,12 @@
                     direction: direction,
                     delay: delay,
                     easing: 'linear'
+                });
+                item.addEventListener('mouseenter', () => {
+                    animation.pause();
+                });
+                item.addEventListener('mouseleave', () => {
+                    animation.play();
                 });
             });
         }
