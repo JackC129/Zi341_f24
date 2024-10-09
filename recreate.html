@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recreate To-Do List</title>
+    <style>
+        body {
+            background-color: #c2d3d7;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Courier New', Courier, monospace;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .todo-item {
+            position: relative;
+            white-space: nowrap;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        .todo-item input[type="checkbox"] { /*from https://taper.badquar.to/12/to-do.html */
+            height: 1.6em;
+            width: 1.6em;
+            margin: 14px;
+            vertical-align: middle;
+        }
+
+        #todoList {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do</h1>
+    <div id="todoList">
+        <div class="todo-item"><input type="checkbox">snooze alarm<input type="checkbox">go back to sleep again<input type="checkbox">close alarm<input type="checkbox">wake up<input type="checkbox">get out of bed</div>
+        <div class="todo-item"><input type="checkbox">get ready<input type="checkbox">journey to cafe<input type="checkbox">get an order<input type="checkbox">pick up my iced americano</div>
+        <div class="todo-item"><input type="checkbox">walk to train station<input type="checkbox">tap my omny<input type="checkbox">wait for train<input type="checkbox">get on the train<input type="checkbox">find a seat or stand</div>
+        <div class="todo-item"><input type="checkbox">way to work<input type="checkbox">get in the office<input type="checkbox">take out my laptop<input type="checkbox">make sure I have a todo list for the day</div>
+        <div class="todo-item"><input type="checkbox">get lunch<input type="checkbox">maybe think about what to eat and get ready to go out<input type="checkbox">sad bakery breads<input type="checkbox">need to get another coffee</div>
+        <div class="todo-item"><input type="checkbox">get ready to go home<input type="checkbox">shower<input type="checkbox">do my homework<input type="checkbox">scroll through social media</div>
+        <div class="todo-item"><input type="checkbox">need some day off<input type="checkbox">go to sleep and repeat the day again</div>
+    </div>
+
+    <script>
+        function initializeAnimations() {
+            const todoItems = document.querySelectorAll('.todo-item');
+            
+            todoItems.forEach((item, index) => {
+                const width = item.getBoundingClientRect().width;
+                const duration = (Math.random() * 3 + 2) * 10000; 
+                const delay = -Math.random() * 20000; 
+                const direction = index % 2 === 0 ? "alternate" : "alternate-reverse";
+
+                //from https://taper.badquar.to/12/to-do.html 
+                item.animate([
+                    { transform: `translateX(${-width}px)` },
+                    { transform: `translateX(${window.innerWidth}px)` }
+                ], {
+                    duration: duration,
+                    iterations: Infinity,
+                    direction: direction,
+                    delay: delay,
+                    easing: 'linear'
+                });
+            });
+        }
+        // Initialize animations when the page loads
+        window.addEventListener('load', initializeAnimations);
+        // Reinitialize animations when window is resized
+        window.addEventListener('resize', initializeAnimations);
+    </script>
+</body>
+</html>
