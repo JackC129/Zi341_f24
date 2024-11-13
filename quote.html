@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inspiration Quotes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('/image/mountain.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container {
+            width: 50vw; 
+            height: 50vh; 
+            background-color: rgba(95, 95, 95, 0.5); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #container h2 {
+            text-align: center;
+            font-family: "Playwrite GB S", cursive;
+            color: #d7d7d7;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+        #content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        .quote {
+            font-size: 1.5em;
+            color: white;
+            margin-bottom: 20px;
+            font-family: "Playwrite GB S", cursive;
+        }
+        .author {
+            font-size: 1.2em;
+            color: #d7d7d7;
+            font-style: italic;
+            font-family: "Playwrite GB S", cursive;
+        }
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: auto;
+        }
+        button {
+            background-color: rgba(135, 156, 173, 1);
+            padding: 10px 25px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+        }
+        button:hover {
+            background-color: rgba(135, 156, 173, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Daily Inspiration Quotes</h2>
+        <div id="content"></div>
+        <div class="button-container">
+            <a class="homebtn" href="weekblog.html"><button>Home</button></a>
+        </div>
+    </div>
+
+    <script>
+        async function fetchData() {
+            try {
+                const response = await fetch('https://zenquotes.io/api/today');
+                const data = await response.json();
+                return data[0];
+            } catch (error) {
+                console.error('Error:', error);
+                return {
+                    q: "The ones who are crazy enough to think they can change the world are the ones who do.",
+                    a: "Steve Jobs"
+                };
+            }
+        }
+
+        // Function to display the quote and author
+        function displayQuote(quote, author) {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = `
+                <div class="quote">"${quote}"</div>
+                <div class="author">- ${author}</div>
+            `;
+        }
+
+        // Function to fetch and display the quote
+        async function fetchAndDisplayQuote() {
+            const data = await fetchData();
+            displayQuote(data.q, data.a);
+        }
+
+        // Call the function when the page loads
+        fetchAndDisplayQuote();
+    </script>
+</body>
+</html>
