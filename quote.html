@@ -100,7 +100,7 @@
             }
         }
 
-        // Function to display the quote and author
+        // This function to display the quote and author
         function displayQuote(quote, author) {
             const contentDiv = document.getElementById('content');
             contentDiv.innerHTML = `
@@ -109,7 +109,7 @@
             `;
         }
 
-        // Function to fetch and display the quote
+        // This function to fetch and display the quote
         async function fetchAndDisplayQuote() {
             const data = await fetchData();
             displayQuote(data.q, data.a);
